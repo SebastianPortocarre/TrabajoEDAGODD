@@ -7,7 +7,7 @@
 class Compressor {
 public:
     static std::vector<char> compress(const std::string& data);
-
+    
     static std::string decompress(const std::vector<char>& compressedData);
 };
 
