@@ -1,4 +1,3 @@
-// Tablas.cpp
 #include "Tablas.h"
 #include <fstream>
 #include <iostream>
