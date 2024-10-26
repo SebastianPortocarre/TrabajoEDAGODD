@@ -33,6 +33,25 @@ public:
     uint16_t obtenerIndiceDistrito(const std::string& distrito);
     uint32_t obtenerIndiceUbicacion(const std::string& ubicacion);
     uint32_t obtenerIndiceEmail(const std::string& email);
+
+    void guardarTablas(const std::string& directorio);
+    bool cargarTablas(const std::string& directorio);
+
+private:
+    template<typename T>
+    void guardarVector(const std::vector<T>& vec, const std::string& nombre_archivo);
+
+    template<typename T>
+    bool cargarVector(std::vector<T>& vec, const std::string& nombre_archivo);
+
+    template<typename K, typename V>
+    void guardarMapa(const std::unordered_map<K, V>& mapa, const std::string& nombre_archivo);
+
+    template<typename K, typename V>
+    bool cargarMapa(std::unordered_map<K, V>& mapa, const std::string& nombre_archivo);
+
+    void crearDirectorio(const std::string& directorio);
+    bool existeDirectorio(const std::string& directorio);
 };
 
-#endif
+#endif 
