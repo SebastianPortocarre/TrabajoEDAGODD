@@ -12,11 +12,8 @@ struct Entry {
 class CuckooHashTab {
 public:
     CuckooHashTab(int initial_size = 22000000, int num_tables = 2);
-
     void insertar(uint32_t dni, uint32_t offset);
-
     bool buscar(uint32_t dni, uint32_t& offset) const;
-
     void eliminar(uint32_t dni);
 
 private:
@@ -35,8 +32,6 @@ private:
     std::vector<std::vector<Entry>> tables;
 
     const int rehash_limit = 500;
-
-    // Seeds para las funciones de hash
     uint32_t seed1;
     uint32_t seed2;
 
@@ -44,4 +39,4 @@ private:
     uint32_t murmur3_32(uint32_t key, uint32_t seed) const;
 };
 
-#endif // CUCKOOHASHTAB_H
+#endif
